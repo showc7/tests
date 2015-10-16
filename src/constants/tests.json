@@ -1,0 +1,64 @@
+{
+    "tests": [
+        {
+            "name": "example1",
+            "time": "300",
+            "questions": [
+                {
+                    "text": "Сколько граммов в килограмме",
+                    "img": "/images/Moon_Festival-2012-hp.jpg",
+                    "variants": [
+                        {
+                          "text": "1000",
+                          "isCorrect": "true"
+                        },
+                        {
+                          "text": "2000",
+                          "isCorrect": "true"
+                        },
+                        {
+                          "text": "3000"
+                        },
+                        {
+                          "text": "4000"
+                        }
+                      ]
+                },
+                {
+                  "text": "Расстояние от Земли до Солнца",
+                  "answer": 149600000,
+                  "isInput": true
+                }
+            ]
+        },
+        {
+            "name": "example2",
+            "time": "300",
+            "questions": [
+                {
+                    "img": "/images/Moon_Festival-2012-hp.jpg",
+                    "variants": [
+                        {
+                          "text": "1000",
+                          "isCorrect": "true"
+                        },
+                        {
+                          "text": "2000"
+                        },
+                        {
+                          "text": "3000"
+                        },
+                        {
+                          "text": "4000"
+                        }
+                    ]
+                },
+                {
+                  "text": "Расстояние от Земли до Солнца",
+                  "answer": 149600000,
+                  "isInput": true
+                }
+            ]
+        }
+    ]
+}

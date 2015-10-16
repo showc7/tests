@@ -13,7 +13,8 @@ module.exports = {
         loaders: [
             { test: /\.es/, loader: 'babel-loader?stage=0&optional=runtime' },
             { test: /\.(sass|scss)$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?minimize!sass-loader') },
-            { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?minimize') }
+            { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?minimize') },
+            { test: /\.json$/, loader: 'json-loader' }
        ]
     },
     plugins: [
