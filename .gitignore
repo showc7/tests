@@ -1,3 +1,5 @@
 node_modules
-build/bundle.js
-build/bundle.css
+browser/node_modules
+browser/build/bundle.js
+browser/build/bundle.css
+build
