@@ -3,8 +3,14 @@ export default {
     ViewClasses: {
         APP_VIEW: 'app-view',
         TEST_VIEW: 'test_view',
-        STATIC_VIEW: 'static_view',
+        STATISTIC_VIEW: 'static_view',
         RESULT_VIEW: 'result_view',
+    },
+    ViewRoutes: {
+        APP_VIEW: '/',
+        TEST_VIEW: '/test/',
+        STATISTIC_VIEW: '/statistic',
+        RESULT_VIEW: '/result'
     },
     ComponentClasses: {
         LIST: 'test_list',

@@ -12,7 +12,7 @@ export default class App extends React.Component {
                 <InputForm />
                 <label>{Constants.Labels.TESTS_LIST}</label>
                 <List dataSource={this.props.state.tests} checkedIndex={this.props.state.checkedIndex}/>
-                <Link to={`/test/${this.props.state.checkedIndex}`}>{Constants.Labels.START_TEST}</Link>
+                <Link to={`${Constants.ViewRoutes.TEST_VIEW}${this.props.state.checkedIndex}`}>{Constants.Labels.START_TEST}</Link>
             </div>
         );
     }

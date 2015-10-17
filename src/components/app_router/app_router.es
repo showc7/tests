@@ -5,6 +5,7 @@ import App from '../app/app.es';
 import Test from '../test/test.es';
 import Statistic from '../statistic/statistic.es';
 import Result from '../result/result.es';
+import Constants from '../../constants/constants.es';
 
 import { initialize } from '../../actions/state_actions.es';
 
@@ -12,12 +13,12 @@ export default class AppRouter extends React.Component {
     render () {
         return (
             <Router>
-                <Route path="/" component={() => {
+                <Route path={Constants.ViewRoutes.APP_VIEW} component={() => {
                     return <App state={this.props.state}/>;
                 }}/>
-                <Route path="/test/:testId" component={Test}/>
-                <Route path="/statistic" component={Statistic}/>
-                <Route path="/result" component={Result}/>
+                <Route path={Constants.ViewRoutes.TEST_VIEW + ':testId'} component={Test}/>
+                <Route path={Constants.ViewRoutes.STATISTIC_VIEW} component={Statistic}/>
+                <Route path={Constants.ViewRoutes.RESULT_VIEW} component={Result}/>
             </Router>
         );
     }
