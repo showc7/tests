@@ -9,6 +9,7 @@ import Test from './components/test/test.es';
 import Statistic from './components/statistic/statistic.es';
 import Result from './components/result/result.es';
 import AppStore from './store/store.es';
+import { initialize } from './actions/state_actions.es';
 
 const content = document.body.getElementsByClassName('content')[0];
 let subscriber;
@@ -37,3 +38,5 @@ React.render((
         <Route path="/result" component={subscribe(Result, AppStore, content)}/>
     </Router>
 ), content);
+
+initialize();
