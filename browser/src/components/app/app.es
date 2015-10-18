@@ -1,10 +1,24 @@
 import React from 'react';
+import _ from 'lodash';
 import Constants from '../../constants/constants.es';
-import InputForm from '../input-form/input-form.es';
-import List from '../list/list.es';
+import InputForm from './components/input-form.es';
+import List from './components/list.es';
 import { Link } from 'react-router';
+import { startTest } from '../../actions/state_actions.es';
 
 export default class App extends React.Component {
+    isNameCorrect () {
+        return !_.isEmpty(this.props.state.user.name);
+    }
+
+    isGroupCorrect () {
+        return !_.isEmpty(this.props.state.user.group);
+    }
+
+    onClickHandler () {
+        startTest();
+    }
+
     render () {
         return (
             <div className={Constants.ViewClasses.APP_VIEW}>
@@ -12,7 +26,14 @@ export default class App extends React.Component {
                 <InputForm />
                 <label>{Constants.Labels.TESTS_LIST}</label>
                 <List dataSource={this.props.state.tests} checkedIndex={this.props.state.checkedIndex}/>
-                <Link to={`${Constants.ViewRoutes.TEST_VIEW}${this.props.state.checkedIndex}`}>{Constants.Labels.START_TEST}</Link>
+                <Link
+                    onClick={this.onClickHandler}
+                    to={
+                    this.props.state.checkedIndex >= 0 &&
+                    this.isNameCorrect() &&
+                    this.isGroupCorrect() ?
+                    `${Constants.ViewRoutes.TEST_VIEW}${this.props.state.checkedIndex}` : ''
+                    }>{Constants.Labels.START_TEST}</Link>
             </div>
         );
     }

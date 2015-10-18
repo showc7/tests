@@ -6,7 +6,7 @@
             "questions": [
                 {
                     "text": "Сколько граммов в килограмме",
-                    "img": "/images/Moon_Festival-2012-hp.jpg",
+                    "img": "example.jpg",
                     "variants": [
                         {
                           "text": "1000",
@@ -36,7 +36,7 @@
             "time": "300",
             "questions": [
                 {
-                    "img": "/images/Moon_Festival-2012-hp.jpg",
+                    "img": "example2.png",
                     "variants": [
                         {
                           "text": "1000",

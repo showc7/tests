@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import dataSource from '!json!../constants/tests.json';
+import dataSource from '!json!../tests/tests.json';
 
 export default {
     getTests() {

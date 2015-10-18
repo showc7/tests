@@ -1,6 +1,6 @@
 import React from 'react';
-import Constants from '../../constants/constants.es';
-import TestListItem from '../test-list-item/test-list-item.es';
+import Constants from '../../../constants/constants.es';
+import TestListItem from './test-list-item.es';
 
 export default class List extends React.Component {
     render () {

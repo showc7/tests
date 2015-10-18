@@ -16,7 +16,9 @@ export default class AppRouter extends React.Component {
                 <Route path={Constants.ViewRoutes.APP_VIEW} component={() => {
                     return <App state={this.props.state}/>;
                 }}/>
-                <Route path={Constants.ViewRoutes.TEST_VIEW + ':testId'} component={Test}/>
+                <Route path={Constants.ViewRoutes.TEST_VIEW + ':testId'} component={() => {
+                    return <Test state={this.props.state}/>;
+                }}/>
                 <Route path={Constants.ViewRoutes.STATISTIC_VIEW} component={Statistic}/>
                 <Route path={Constants.ViewRoutes.RESULT_VIEW} component={Result}/>
             </Router>

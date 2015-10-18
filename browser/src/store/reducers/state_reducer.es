@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import ActionTypes from '../../actions/action_types.es';
+import Constants from '../../constants/constants.es'; 
 
 const initialState = {
     user: {
@@ -8,7 +9,21 @@ const initialState = {
     },
 
     tests: [],
-    checkedIndex: -1
+    checkedIndex: -1,
+
+    currentTest: {
+        currentTime: 0,
+        leaveTime: 0,
+        correctAnswersCount: 0,
+        discorrectAnswerCount: 0,
+        questionsCount: 0,
+
+        status: Constants.TestStatus.INIT
+    },
+
+    statistics: {
+
+    }
 };
 
 export function stateReducer(state = _.cloneDeep(initialState), action) {
@@ -16,10 +31,50 @@ export function stateReducer(state = _.cloneDeep(initialState), action) {
         case ActionTypes.INITIALIZE:
             return _.assign(state, { tests: action.data });
         case ActionTypes.ON_USER_NAME_CHANGED:
-            return _.assign(state, action.data);
+            return _.assign(state, { user: _.assign(state.user, action.data) } );
         case ActionTypes.CHECK_TEST:
             return _.assign(state, { checkedIndex: action.data });
+
+        case ActionTypes.LOAD_TEST:
+            return loadTest(state, action.data);
+
+        case ActionTypes.TIMER_START:
+            return timerStart(state);
+        case ActionTypes.TIMER_TICK:
+            return timerTick(state);
+
         default:
             return state;
     }
+}
+
+
+function timerStart (state) {
+    let newTime =  parseInt(state.currentTest.time, 10);
+
+    return _.assign(state, {currentTest: _.assign(state.currentTest, {
+        status: Constants.TestStatus.PROCESS,
+        time: newTime,
+        leaveTime: newTime
+    } )});
+}
+
+function timerTick (state) {
+    let currentTime = state.currentTest.currentTime + 1,
+        leaveTime = state.currentTest.leaveTime - 1;
+
+    if (currentTime >= state.currentTest.time) {
+        return _.assign(state, {currentTest: _.assign(state.currentTest, {
+            status: Constants.TestStatus.FINISHED
+        })});
+    }
+
+    return _.assign(state, {currentTest: _.assign(state.currentTest, {
+        currentTime,
+        leaveTime
+    })});
+}
+
+function loadTest (state, data) {
+    return _.assign(state, {currentTest: _.assign(state.currentTest, data)});
 }

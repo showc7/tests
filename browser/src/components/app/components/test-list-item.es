@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
 import _ from 'lodash';
-import Constants from '../../constants/constants.es';
-import { checkTest } from '../../actions/state_actions.es';
+import Constants from '../../../constants/constants.es';
+import { checkTest } from '../../../actions/state_actions.es';
 
 export default class TestListItem extends React.Component {
 
