@@ -18,10 +18,12 @@
   "homepage": "https://github.com/showc7/tests#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.34.0",
-    "gulp": "^3.9.0",
     "gulp-babel": "^5.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-run": "^1.6.11",
     "run-sequence": "^1.1.4"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0"
   }
 }

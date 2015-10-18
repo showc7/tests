@@ -11,10 +11,14 @@ gulp.task('transpile:electron',function(){
 		.pipe(gulp.dest('build'));
 });
 
-gulp.task('bundleBrowser',function(){
-	return run("cd browser && npm run build && cp build/index.html ../build/index.html && cp build/bundle.js ../build/bundle.js").exec();
+gulp.task('bundleBrowser',function (){
+	return run('cd browser && npm run build && cp build/index.html ../build/index.html && cp build/bundle.js ../build/bundle.js').exec();
 });
 
-gulp.task('build', function(){
+gulp.task('build', function (){
 	return runSequence('transpile:electron','bundleBrowser');
+});
+
+gulp.task('clean', function () {
+	return run('rm ./build/*').exec();
 });
