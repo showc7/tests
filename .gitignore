@@ -1,5 +1,8 @@
+*~
 node_modules
 browser/node_modules
 browser/build/bundle.js
 browser/build/bundle.css
-build
+build/*.js
+build/*.css
+build/*.html
