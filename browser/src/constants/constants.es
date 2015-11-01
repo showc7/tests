@@ -22,7 +22,8 @@ export default {
         STATISTICS: 'global_statistics'
     },
     Marks: {
-        CHECKED: 'checked'
+        CHECKED: 'checked',
+        ALL_CHECKED: 'all_checked'
     },
     Labels: {
         WELCOME: 'Добро пожаловать',

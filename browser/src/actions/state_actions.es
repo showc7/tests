@@ -46,3 +46,17 @@ export function startTest () {
         });
     }, Constants.TimeInterval);
 }
+
+export function changeQuestion () {
+   Store.dispatch({
+      type: ActionTypes.CHANGE_QUESTION,
+      data
+   });
+}
+
+export function checkAnswer (index) {
+   Store.dispatch({
+      type: ActionTypes.CHECK_ANSWER,
+      data: index
+   });
+}

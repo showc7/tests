@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import ActionTypes from '../../actions/action_types.es';
-import Constants from '../../constants/constants.es'; 
+import Constants from '../../constants/constants.es';
 
 const initialState = {
     user: {
@@ -18,12 +18,11 @@ const initialState = {
         discorrectAnswerCount: 0,
         questionsCount: 0,
 
-        status: Constants.TestStatus.INIT
+        status: Constants.TestStatus.INIT,
+        currentQuestionIndex: 0
     },
-
-    statistics: {
-
-    }
+    currentQuestion: {},
+    statistics: {}
 };
 
 export function stateReducer(state = _.cloneDeep(initialState), action) {
@@ -42,6 +41,12 @@ export function stateReducer(state = _.cloneDeep(initialState), action) {
             return timerStart(state);
         case ActionTypes.TIMER_TICK:
             return timerTick(state);
+
+        case ActionTypes.CHANGE_QUESTION:
+            return changeQuestion(state, action.data);
+
+        case ActionTypes.CHECK_ANSWER:
+            return checkAnswer(state, action.data);
 
         default:
             return state;
@@ -76,5 +81,21 @@ function timerTick (state) {
 }
 
 function loadTest (state, data) {
-    return _.assign(state, {currentTest: _.assign(state.currentTest, data)});
+   let result =_.assign(state, {currentTest: _.assign(state.currentTest, data)});
+   result.CurrentQuestion = currentTest.questions[0];
+   return result;
+}
+
+function getQuestion (state, data) {
+
+}
+
+function changeQuestion (state, data) {
+   return _.assign(state.currentTest, {CurrentQuestion: getQuestion(state, data)});
+}
+
+function checkAnswer (state, data) {
+   let result = _.cloneDeep(state);
+   result.CurrentQuestion.variants[data].isChecked = !(!!state.CurrentQuestion.variants[data].isChecked);
+   return result;
 }

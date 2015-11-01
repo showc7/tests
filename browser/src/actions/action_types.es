@@ -6,5 +6,7 @@ export default keyMirror({
     CHECK_TEST: null,
     LOAD_TEST: null,
     TIMER_START: null,
-    TIMER_TICK: null
+    TIMER_TICK: null,
+    CHANGE_QUESTION: null,
+    CHECK_ANSWER: null
 });

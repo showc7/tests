@@ -1,9 +1,8 @@
 import React from 'react';
 import Constants from '../../constants/constants.es';
 import CurrentTestStatistics from './components/current-test-statistics.es';
-// import Question from './components/question.es';
-// import Answer from './components/answer.es';
-// import Paging from './components/Paging.es';
+import Buttons from './components/buttons.es';
+import Question from './components/question.es';
 
 export default class Test extends React.Component {
 
@@ -14,7 +13,8 @@ export default class Test extends React.Component {
             leaveTime: currentTest.leaveTime,
             correctAnswersCount: currentTest.correctAnswersCount,
             discorrectAnswerCount: currentTest.discorrectAnswerCount,
-            questionsCount: currentTest.questionsCount
+            questionsCount: currentTest.questionsCount,
+            currentQuestionIndex: currentTest.currentQuestionIndex
         };
     }
 
@@ -22,6 +22,9 @@ export default class Test extends React.Component {
         return (
             <div className={Constants.ViewClasses.TEST_VIEW}>
                 <CurrentTestStatistics state={this.getCurrentTestSctatistics()}/>
+                <Question state={this.props.state.currentQuestion}/>
+                <Answers answers={this.props.state.currentQuestion.variants}/>
+                <Buttons state={this.props.state.currentTest.questions}/>
             </div>
         );
     }

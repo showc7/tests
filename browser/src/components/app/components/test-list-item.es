@@ -6,8 +6,8 @@ import { checkTest } from '../../../actions/state_actions.es';
 
 export default class TestListItem extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
 
         this._onCLick = _.bind(this.onClick, this);
     }
