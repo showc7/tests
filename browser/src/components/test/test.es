@@ -1,8 +1,10 @@
+import './_test.scss';
+
 import React from 'react';
 import Constants from '../../constants/constants.es';
 import CurrentTestStatistics from './components/current-test-statistics.es';
-import Buttons from './components/buttons.es';
 import Question from './components/question.es';
+import Answers from './components/current-answers.es';
 
 export default class Test extends React.Component {
 
@@ -24,7 +26,6 @@ export default class Test extends React.Component {
                 <CurrentTestStatistics state={this.getCurrentTestSctatistics()}/>
                 <Question state={this.props.state.currentQuestion}/>
                 <Answers answers={this.props.state.currentQuestion.variants}/>
-                <Buttons state={this.props.state.currentTest.questions}/>
             </div>
         );
     }

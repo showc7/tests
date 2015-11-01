@@ -6,7 +6,11 @@ export default class Question extends React.Component {
    render () {
       return (
          <div>
-            <label>{this.props.state.text}</label>
+            <BackgroundImage
+                className={Constants.ComponentClasses.BACKGROUND_IMAGE}
+                text={this.props.state.text}
+                src={Constants.DEFAULT_IMAGE_URL + this.props.state.img}
+            />
          </div>
       );
    }

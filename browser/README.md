@@ -6,3 +6,5 @@
 * cd build
 * http-server -p 8080
 * open in browser localhost:8080/
+
+TODO add into gulp build task copying of css file

@@ -82,7 +82,7 @@ function timerTick (state) {
 
 function loadTest (state, data) {
    let result =_.assign(state, {currentTest: _.assign(state.currentTest, data)});
-   result.CurrentQuestion = currentTest.questions[0];
+   result.currentQuestion = state.currentTest.questions[0];
    return result;
 }
 
@@ -91,11 +91,11 @@ function getQuestion (state, data) {
 }
 
 function changeQuestion (state, data) {
-   return _.assign(state.currentTest, {CurrentQuestion: getQuestion(state, data)});
+   return _.assign(state.currentTest, {currentQuestion: getQuestion(state, data)});
 }
 
 function checkAnswer (state, data) {
    let result = _.cloneDeep(state);
-   result.CurrentQuestion.variants[data].isChecked = !(!!state.CurrentQuestion.variants[data].isChecked);
+   result.currentQuestion.variants[data].isChecked = !(!!state.currentQuestion.variants[data].isChecked);
    return result;
 }

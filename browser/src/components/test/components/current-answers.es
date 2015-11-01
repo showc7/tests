@@ -1,17 +1,18 @@
 import React from 'react';
 import Constants from '../../../constants/constants.es';
 import _ from 'lodash';
+import AnswerListItem from './answer-list-item.es';
 
 export default class QuestionAnswers extends React.Component {
    render () {
       var checked = 0,
          correct = 0;
 
-      _.forEach((item) => {
+      _.forEach(this.props.answers, (item) => {
          if(item.isCorrect) {
             correct++;
          }
-         if(item.isCheked) {
+         if(item.isChecked) {
             checked++;
          }
       });
@@ -20,9 +21,11 @@ export default class QuestionAnswers extends React.Component {
          <div>
          {
             this.props.answers.map((answer, index) => {
-               return <AnswerListItem answer={answer}
-                  isChecked = {answer.isChecked}
-                  isAllChecked = {checked === correct}/>;
+               return <AnswerListItem
+                  index={index}
+                  answer={answer}
+                  isChecked={!!answer.isChecked}
+                  isAllChecked={checked === correct}/>;
             })
          }
          </div>
