@@ -19,11 +19,16 @@ export default {
         TEST_LIST_ITEM: 'test_list_item',
         BACKGROUND_IMAGE: 'background-image',
         CURRENT_TEST_STATISTICS: 'current_test_statistics',
-        STATISTICS: 'global_statistics'
+        STATISTICS: 'global_statistics',
+        NAVIGATION_BUTTON_ITEM: 'navigationButtonItem',
+        NAVIGATION_BAR: 'NavigationBar'
     },
     Marks: {
         CHECKED: 'checked',
-        ALL_CHECKED: 'all_checked'
+        ALL_CHECKED: 'all_checked',
+        CURRENT: 'current',
+        INCORRECT: 'incorrect',
+        CORRECT: 'correct'
     },
     Labels: {
         WELCOME: 'Добро пожаловать',

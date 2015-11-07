@@ -13,6 +13,15 @@ export default {
     },
 
     get(index) {
-        return dataSource.tests[index];
+      let test = dataSource.tests[index];
+
+      test.questions = _.reduce(test.questions, (acc, item) => {
+         let i = item;
+         i.isCorrect = false;
+         acc.push(i);
+         return acc;
+      }, []);
+
+      return test;
     }
 };

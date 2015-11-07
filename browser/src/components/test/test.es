@@ -5,6 +5,7 @@ import Constants from '../../constants/constants';
 import CurrentTestStatistics from './components/current-test-statistics';
 import Question from './components/question';
 import Answers from './components/current-answers';
+import NavigationBar from './components/NavigationBar';
 
 export default class Test extends React.Component {
 
@@ -21,11 +22,14 @@ export default class Test extends React.Component {
     }
 
     render () {
+      const currentTest = this.getCurrentTestSctatistics();
         return (
             <div className={Constants.ViewClasses.TEST_VIEW}>
-                <CurrentTestStatistics state={this.getCurrentTestSctatistics()}/>
+                <CurrentTestStatistics state={currentTest}/>
                 <Question state={this.props.state.currentQuestion}/>
                 <Answers answers={this.props.state.currentQuestion.variants}/>
+                <NavigationBar questions={this.props.state.currentTest.questions}
+                  currentQuestionIndex={currentTest.currentQuestionIndex}/>
             </div>
         );
     }

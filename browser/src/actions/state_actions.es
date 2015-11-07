@@ -47,10 +47,10 @@ export function startTest () {
     }, Constants.TimeInterval);
 }
 
-export function changeQuestion () {
+export function changeQuestion (index) {
    Store.dispatch({
       type: ActionTypes.CHANGE_QUESTION,
-      data
+      data: index
    });
 }
 

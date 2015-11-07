@@ -19,9 +19,12 @@ const initialState = {
         questionsCount: 0,
 
         status: Constants.TestStatus.INIT,
-        currentQuestionIndex: 0
+        currentQuestionIndex: 0,
+        questions: []
     },
-    currentQuestion: {},
+    currentQuestion: {
+      variants: []
+   },
     statistics: {}
 };
 
@@ -91,7 +94,7 @@ function getQuestion (state, data) {
 }
 
 function changeQuestion (state, data) {
-   return _.assign(state.currentTest, {currentQuestion: getQuestion(state, data)});
+   return state;//_.assign(state.currentTest, {currentQuestion: getQuestion(state, data)});
 }
 
 function checkAnswer (state, data) {
