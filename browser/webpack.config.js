@@ -17,6 +17,9 @@ module.exports = {
             { test: /\.json$/, loader: 'json-loader' }
        ]
     },
+    resolve: {
+        extensions: ['', '.js', 'jsx', '.es', '.css', '.scss', '.ttf']
+    },
     plugins: [
         new ExtractTextPlugin('bundle.css')
     ]
