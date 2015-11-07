@@ -1,6 +1,6 @@
 import React from 'react';
-import Constants from '../../../constants/constants.es';
-import FullTestStatistics from './full-test-statistics.es';
+import Constants from '../../../constants/constants';
+import FullTestStatistics from './full-test-statistics';
 
 export default class CurrentTestStatistics extends React.Component {
 

@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import ActionTypes from '../../actions/action_types.es';
-import Constants from '../../constants/constants.es';
+import ActionTypes from '../../actions/action_types';
+import Constants from '../../constants/constants';
 
 const initialState = {
     user: {

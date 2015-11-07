@@ -1,6 +1,6 @@
 import React from 'react';
-import AppRouter from './components/app_router/app_router.es';
-import store from './store/store.es';
+import AppRouter from './components/app_router/app_router';
+import store from './store/store';
 
 (() => {
     const container = document.body.getElementsByClassName('content')[0];

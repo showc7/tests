@@ -1,10 +1,10 @@
 import './_test.scss';
 
 import React from 'react';
-import Constants from '../../constants/constants.es';
-import CurrentTestStatistics from './components/current-test-statistics.es';
-import Question from './components/question.es';
-import Answers from './components/current-answers.es';
+import Constants from '../../constants/constants';
+import CurrentTestStatistics from './components/current-test-statistics';
+import Question from './components/question';
+import Answers from './components/current-answers';
 
 export default class Test extends React.Component {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import Constants from '../../../constants/constants.es';
+import Constants from '../../../constants/constants';
 import classnames from 'classnames';
 
 /**

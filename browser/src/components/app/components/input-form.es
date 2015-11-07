@@ -1,6 +1,6 @@
-import { inputUser } from '../../../actions/state_actions.es';
+import { inputUser } from '../../../actions/state_actions';
 import React from 'react';
-import Constants from '../../../constants/constants.es';
+import Constants from '../../../constants/constants';
 
 export default class InputForm extends React.Component {
     onNameChange (event) {

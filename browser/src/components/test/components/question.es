@@ -1,6 +1,6 @@
 import React from 'react';
-import Constants from '../../../constants/constants.es';
-import BackgroundImage from './background-image.es';
+import Constants from '../../../constants/constants';
+import BackgroundImage from './background-image';
 
 export default class Question extends React.Component {
    render () {

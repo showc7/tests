@@ -1,10 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
-import Constants from '../../constants/constants.es';
-import InputForm from './components/input-form.es';
-import List from './components/list.es';
+import Constants from '../../constants/constants';
+import InputForm from './components/input-form';
+import List from './components/list';
 import { Link } from 'react-router';
-import { startTest } from '../../actions/state_actions.es';
+import { startTest } from '../../actions/state_actions';
 
 export default class App extends React.Component {
     isNameCorrect () {

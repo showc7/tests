@@ -1,6 +1,6 @@
 import React from 'react';
-import Constatns from '../../../constants/constants.es';
-import markupHelper from './markupHelper.es';
+import Constatns from '../../../constants/constants';
+import markupHelper from './markupHelper';
 
 export default class StatisticsForm extends React.Component{
 
