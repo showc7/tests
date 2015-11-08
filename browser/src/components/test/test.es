@@ -5,7 +5,7 @@ import Constants from '../../constants/constants';
 import CurrentTestStatistics from './components/current-test-statistics';
 import Question from './components/question';
 import Answers from './components/current-answers';
-import NavigationBar from './components/NavigationBar';
+import NavigationBar from './components/navigationBar';
 
 export default class Test extends React.Component {
 

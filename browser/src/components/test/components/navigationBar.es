@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import Constants from '../../../constants/constants';
-import NavigationButton from './NavigationButton';
+import NavigationButton from './navigationButton';
 
 /*
  *

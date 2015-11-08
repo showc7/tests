@@ -2,7 +2,7 @@ import React from 'react';
 import Constants from '../../../constants/constants';
 import _ from 'lodash';
 import AnswerListItem from './answer-list-item';
-import AnswerInput from './answerinput';
+import AnswerInput from './answerInput';
 
 export default class QuestionAnswers extends React.Component {
    render () {
