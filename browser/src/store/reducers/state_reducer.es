@@ -3,29 +3,29 @@ import ActionTypes from '../../actions/action_types';
 import Constants from '../../constants/constants';
 
 const initialState = {
-    user: {
-        name: '',
-        group: ''
-    },
+   user: {
+      name: '',
+      group: ''
+   },
 
-    tests: [],
-    checkedIndex: -1,
+   tests: [],
+   checkedIndex: -1,
 
-    currentTest: {
-        currentTime: 0,
-        leaveTime: 0,
-        correctAnswersCount: 0,
-        discorrectAnswerCount: 0,
-        questionsCount: 0,
+   currentTest: {
+      currentTime: 0,
+      leaveTime: 0,
+      correctAnswersCount: 0,
+      discorrectAnswerCount: 0,
+      questionsCount: 0,
 
-        status: Constants.TestStatus.INIT,
-        currentQuestionIndex: 0,
-        questions: []
-    },
-    currentQuestion: {
+      status: Constants.TestStatus.INIT,
+      currentQuestionIndex: 0,
+      questions: []
+   },
+   currentQuestion: {
       variants: []
    },
-    statistics: {}
+   statistics: {}
 };
 
 export function stateReducer(state = _.cloneDeep(initialState), action) {
@@ -50,6 +50,9 @@ export function stateReducer(state = _.cloneDeep(initialState), action) {
 
         case ActionTypes.CHECK_ANSWER:
             return checkAnswer(state, action.data);
+
+        case ActionTypes.INPUT_TEXT_CHANGED:
+            return state;///
 
         default:
             return state;
@@ -90,11 +93,14 @@ function loadTest (state, data) {
 }
 
 function getQuestion (state, data) {
-
+   return state.currentTest.questions[data];
 }
 
 function changeQuestion (state, data) {
-   return state;//_.assign(state.currentTest, {currentQuestion: getQuestion(state, data)});
+   //return state;//_.assign(state.currentTest, {currentQuestion: getQuestion(state, data)});
+   //return _.assign(state.currentTest, {currentQuestion: getQuestion(state, data)});
+   //return _.assign(state, {currentTest: _.assign(state.currentTest, {currentQuestion: getQuestion(state, data)})});
+   return _.assign(state, {currentQuestion: getQuestion(state, data)});
 }
 
 function checkAnswer (state, data) {

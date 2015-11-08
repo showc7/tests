@@ -27,7 +27,8 @@ export default class Test extends React.Component {
             <div className={Constants.ViewClasses.TEST_VIEW}>
                 <CurrentTestStatistics state={currentTest}/>
                 <Question state={this.props.state.currentQuestion}/>
-                <Answers answers={this.props.state.currentQuestion.variants}/>
+                <Answers answers={this.props.state.currentQuestion.variants}
+                  isInput={this.props.state.currentQuestion.isInput}/>
                 <NavigationBar questions={this.props.state.currentTest.questions}
                   currentQuestionIndex={currentTest.currentQuestionIndex}/>
             </div>

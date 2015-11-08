@@ -60,3 +60,10 @@ export function checkAnswer (index) {
       data: index
    });
 }
+
+export function InputTextChanged (text) {
+   Store.dispatch({
+      type: ActionTypes.INPUT_TEXT_CHANGED,
+      data: text
+   });
+}

@@ -17,7 +17,7 @@ export default class NavigationButton extends React.Component {
    }
 
    onClick (event) {
-      changeQuestion(this.props.index);
+      changeQuestion(this.props.index - 1);
    }
 
    render () {

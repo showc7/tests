@@ -8,5 +8,6 @@ export default keyMirror({
     TIMER_START: null,
     TIMER_TICK: null,
     CHANGE_QUESTION: null,
-    CHECK_ANSWER: null
+    CHECK_ANSWER: null,
+    INPUT_TEXT_CHANGED: null
 });
